@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:url("background.jpg");
+    background-size: cover;
+}
+
+.container {
+    width: 35%;
+    margin: 100px auto;
+    margin-top: 0px;
+    padding: 20px;
+    opacity:100;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-color: black;
+
+    
+}
+
+h2 {
+    text-align: center;
+    font-weight: 1000;
+    font-size: xx-large;
+    color:black;
+    margin-top: 0px;
+    
+}
+
+form {
+    margin-top: 0px;
+}
+
+
+
+label {
+
+    display: block;
+    color: white;
+}
+
+input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+p{
+    color:white;
+}
+    </style>
+    <div class="container">
+        <h2>Register</h2>
+        <form action="login.php" method="post">
+
+
+
+            <label for="gmail">Email <input type="text" id="gmail" placeholder="example123@gmail.com" name="gmail" required><br><br></label>
+            
+            
+            <label for="name">Name <input type="text" id="name" placeholder="Enter your name " name="name" required><br><br></label>
+            
+
+            
+            <label for="password">Enter your password<br><input type="password" id="password" placeholder="Password" name="password" required><br><br> </label>
+            
+            
+            <label for="confirm-password">Confirm password<br> <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required><br><br>   </label>
+            
+
+
+
+            <button type="submit">Create account</button>
+            
+            
+        </form>
+<p style="text-align: center;">Already have an account? Log in!</p>
+	    <a href = "loginpage.html"><button>Log in</button></a>
+    </div>
+</body>
+</html>
