@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
     <style>
@@ -79,6 +81,14 @@ button:hover {
 p{
     color:white;
 }
+.fa-eye-slash{
+  position: absolute;
+  top: 45%;
+  right: 33.5%;
+  cursor: pointer;
+  color: gray;
+}
+
     </style>
     <div class="container">
         <h2>Register</h2>
@@ -94,15 +104,17 @@ p{
 
             
             <label for="password">Enter your password<br><input type="password" id="password" placeholder="Password" name="password" required><br><br> </label>
-            
+            <i class="fa-solid fa-eye-slash" id="show-password"></i>              
+
             
             <label for="confirm-password">Confirm password<br> <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password" required><br><br>   </label>
-            
 
 
 
             <button type="submit">Create account</button>
-            
+            <script src = "script.js"></script>
+
+
             
         </form>
 <p style="text-align: center;">Already have an account? Log in!</p>
