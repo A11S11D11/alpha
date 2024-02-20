@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <style>
@@ -13,26 +14,27 @@
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background:url("background.jpg");
-    
+    background:url("sample3.jpeg");
+    background-attachment:fixed;
     background-size: cover;
 }
 
 .container {
+    backdrop-filter : blur(20px);
     width: 20%;
     margin: 100px auto;
     padding: 20px;
     opacity:100;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-color: black;
+    /box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);/
+    border-color: white;
 }
 
 h2 {
     text-align: center;
     font-weight: 1000;
     font-size: xx-large;
-    color:black;
+    color: white;
     
 }
 
@@ -40,7 +42,19 @@ form {
     margin-top: 20px;
 }
 
-
+    .register a{
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        background: firebrick;
+        border-radius: 8px;
+        transition: 0.4s;
+    }
+    .register a:hover{
+        background: transparent;
+        border: 0.1px solid firebrick;
+    }
 
 label {
     display: block;
@@ -54,6 +68,7 @@ button {
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border-radius: 7px;
 }
 
 button {
@@ -62,6 +77,10 @@ button {
     border: none;
     cursor: pointer;
 }
+a{
+  text-decoration: none;
+  color: white;
+}
 
 button:hover {
     background-color: #0056b3;
@@ -69,19 +88,37 @@ button:hover {
 p{
     color:white;
 }
+.fa-eye-slash{
+  position: absolute;
+  top: 47.5%;
+  right: 7%;
+  cursor: pointer;
+  color: lightgray;
+}
+
     </style>
+<body>
+          <div class="register">
+            <a href="index.html">Back</a>
+        </div>
     <div class="container">
         <h2>Login</h2>
         <form action="login.php" method="post">
             
             <input type="text" id="username" placeholder="username" name="username" required><br><br>
             
-            <input type="password" id="password" placeholder="Password" name="password" required><br><br>
+            <input type="password" id="password" placeholder="Password"  name="password" >
+          
+            <i class="fa-solid fa-eye-slash" id="show-password"></i>              
+
+            <br><br>
             <button type="submit">Login</button>
-            
+            <p style="text-align: center;">don't have an account? create new!</p>
+            <button type="submit"><a href="register.html">Register</a></button>
+            <script src = "script.js"></script>
+
         </form>
-<p style="text-align: center;">Don't have an account? Create new!</p>
-            <a href = "registerpage.html"><button type="submit">Register</button></a>
+        
     </div>
 </body>
 </html>
