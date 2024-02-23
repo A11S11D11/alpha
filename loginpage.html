@@ -1,124 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background:url("background.jpg");
-    background-attachment:fixed;
-    background-size: cover;
+<html></head>
+<title>ok</title>
+<style>
+ body{background : linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.0)),url('bg_1.jpg');}
+.CEN{
+   box-sizing : border-box;
+   align-items : center;
+   display: flex;
+   justify-content: center;
+   flex-direction : column;
+  /* background : linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.0)), url('bg_1.jpg');*/
+   font-family : sans-serif;
+   min-height : 100%;
+   margin : 10%;
+  }
+.container{
+       position:relative;
+       width : 768px; 
+       max-width : 100%;
+       min-height : 600px;
+       background :  transparent;
+       border-radius : 0px 200px 0px 200px;
+       overflow : hidden;
+       /box-shadow : 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.25);/
+       }
+.sign-up,.sign-in{
+   position : absolute;
+   top : 0;
+   left : 0;
+   height : 100%;
+   transition : all 0.6s ease-in-out;
 }
-
-.container {
-    backdrop-filter : blur(20px);
-    width: 30%;
-    margin: 100px auto;
-    padding: 20px;
-    opacity:100;
-    border-radius: 5px;
-    /box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);/
-    border-color: white;
+.sign-up{
+  width : 50%;
+  opacity : 0;
+  z-index: 1
 }
-
-h2 {
-    text-align: center;
-    font-weight: 1000;
-    font-size: xx-large;
-    color: white;
-    
+.sign-in{
+  width : 50%;
+  z-index : 2; 
 }
-
-form {
-    margin-top: 20px;
+form{
+    background : #FFf;
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-direction : column;
+    padding : 0 50px; 
+    height : 100%;
+    text-align : center;
+    }
+h1{font-weight:bold;
+   margin : 0;}
+p{
+ font-size : 14px;
+ font-weight : 100;
+ line-height:20px;
+ letter-spacing : 0.5px;
+ margin : 15px 0 20px;
 }
-
-    .register a{
+input{
+  background : transparent;
+  border : 2px solid #CC5500;
+  border-radius : 0px 20px 0px 20px;
+  padding : 15px 15px;
+  margin  : 8px 15px;
+  width : 100%;
+  outline: none;
+}
+a{
+color : #333;
+font-size : 14px;
+text-decoration : none;
+margin : 15px 0;
+}
+button{
+  color : #fff;
+  background : #FF5349;
+   font-size : 15px;
+   font-weight : bold;
+   padding : 12px 55px;
+   margin : 20px ;
+   border-radius : 0px 20px 0px 20px;
+   border : 1px solid #ff4b2b;
+   outline : none;
+   letter Spacing: 1px;
+   text-transform: upper case;
+   transition:transfer 80ms ease-in;
+   cursor: pointer;
+}
+button:hover{ transform : scale(0.90);}
+#signIn,#signUp{
+background-color : transparent;
+border : 2px solid #fff;
+}
+.container.right-panel-active .sign-in{
+   transform : translateX(100%);
+}
+.container.right-panel-active .sign-up{
+  transform : translateX(100%);
+  opacity : 1;
+  z-index : 5;
+}
+.overlay-container{
+ position: absolute;
+ top : 0;
+ left : 50%;
+ width : 50%;
+ height : 100%;
+ overflow : hidden;
+ transition : transform 0.6s ease-in-out;
+ z-index : 100;
+}
+.container.right-panel-active .overlay-container{
+ transform : translateX(-100%);
+}
+.overlay{
+ position : relative;
+ color : #fff;
+ background : #ff416;
+ left : -100%;
+ height : 100%;
+ width : 200%;
+ background : linear-gradient(to right,#FFAE42,#CC5500);
+ transform : translateX(0);
+ transition : transform 0.6s ease-in-out;
+}
+.register a{
+        display : flex;
+        width : 50px;
         text-decoration: none;
         color: white;
         padding: 10px 20px;
-        font-size: 20px;
+        font-size: 22px;
         background: firebrick;
-        border-radius: 8px;
+        border-radius: 0px 20px 0px 20px;
         transition: 0.4s;
     }
     .register a:hover{
         background: transparent;
         border: 0.1px solid firebrick;
     }
+.container.right-panel-active .overlay{transform:translateX(50%);}
+.overlay-left, .overlay-right{
+  position : absolute;
+  display : flex;
+  align-items: center;
+  justify-content : center;
+  flex-direction : column;
+  padding:0 40px;
+  text-align : center;
+  top : 0;
+  height : 100%; 
+  width : 50%;
+  transform : translateX(0);
+  transition : transform 0.6s ease-in-out;
+}
+.overlay-left{ transform ; translateX(-20%);}
+.overlay-right{ right : 0;
+                transform : translateX(0);}
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
+.container.right-panel-active  .overlay-left{ transform : translateX(0);}
+.container.right-pane-active .overlay-left{transform : translateX(20%)}
 
-input[type="text"],
-input[type="password"],
-button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border-radius: 7px;
+.social-container{ margin : 20px 0;}
+.social-container{
+  height: 40px;
+  width : 40px;
+  margin : 0 5px;
+  display : inline-flex;
+  justify-content : center;
+  align-items : center;
+  border : 1px solid #ccc;
+  border-radius : 50%;
 }
-
-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-a{
-  text-decoration: none;
-  color: white;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-p{
-    color:white;
-}
-.fa-eye-slash{
-  position: absolute;
-  top: 47.5%;
-  right: 9%;
-  cursor: pointer;
-  color: gray;
-}
-
-    </style>
+</style>
+</head>
 <body>
-          <div class="register">
-            <a href="index.html">Back</a>
+ <div class="register">
+            <a href="ok.html">Back</a>
         </div>
-    <div class="container">
-        <h2>Login</h2>
-        <form action="login.php" method="post">
-            
-            <input type="text" id="username" placeholder="username" name="username" required><br><br>
-            
-            <input type="password" id="password" placeholder="Password"  name="password" >
-          
-            <i class="fa-solid fa-eye-slash" id="show-password"></i>              
+<div class="CEN">
+<div class = "container" id = "main">
+   <div class = "sign-in">
+   <form action = "#">
+    <h1>login</h1>
+    <div class = "social-container">
+           <a href = "#" class = "social">f</a>
+           <a href = "#" class = "social">g</a>
+           <a href = "#" class = "social">l</a>
+     </div>
+      <p>--------OR---------</p>
+      <input type = "email" name = "email" placeholder="email" required></input>
+      <input type = "password" name = "pswd" placeholder = 'password' required></input>
+      <a href='#'>forget password</a>
+      <button>login</button>
+   </form>
+  </div>
+ <div class = "sign-up">
+   <form action = "#">
+    <h1>Register</h1>
+    <div class = "div-container">
+           <a href = "#" class = "social"></a>
+           <a href = "#" class = "social"></a>
+           <a href = "#" class = "social"></a>
+     </div>
+      <p>Register</p>
+      <input type = "text" name = "txt" placeholder="name" required></input>
+      <input type = "email" name = "email" placeholder="email" required></input>
+      <input type = "password" name = "pswd" placeholder = 'password' required></input>
+      <input type = "password" name = "re-pswd" placeholder = 're-enterpassword' required></input>
+      <button>Register</button>
+   </form>
+  </div>
+    <div class  = "overlay-container">
+        <div class = "overlay">
+         <div class = "overlay-left">
+           <h1>Welcome bois</h1>
+           <p>connecting people with our own way</p>
+           <button id="signIn">Sign In</button></div>
+           <div class = "overlay-right">
+           <h1>Hello Bois</h1>
+           <p>personal details </p>
+           <button id="signUp">Sign Up</button></div>
+       </div></div>
+</div></div>
+<script type = "text/javascript">
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const main = document.getElementById('main');
+  
+ signUpButton.addEventListener('click',() =>{main.classList.add("right-panel-active");});
+ signInButton.addEventListener('click',()=>{main.classList.remove("right-panel-active");})
 
-            <br><br>
-            <button type="submit">Login</button>
-            <p style="text-align: center;">don't have an account? create new!</p>
-            <button type="submit"><a href="register.html">Register</a></button>
-            <script src = "script.js"></script>
+</script>
 
-        </form>
-        
-    </div>
-</body>
-</html>
+</body></html>
