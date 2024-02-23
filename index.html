@@ -3,21 +3,18 @@
 <head>
     <title>www.AlpHA.com</title>
 <style type="text/css">
+     html{
+       scroll-behavior : smooth;
+       }
+
     *{padding: 0; margin: 0;box-sizing: border-box;}
     header{
         width: 100%;
-        height: 100vh;
-        background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.0)), url('background.jpg');
+        height: 100lvh;
+        background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.0)), url('bg_1.jpg');
         background-size: cover;
         font-family: sans-serif ;
-    }
-    nav{
-        width: 100%;
-        height: 100px;
-        color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        background-attachment : fixed;
     }
     nav{
         width: 100%;
@@ -25,9 +22,9 @@
         color: white;
         display: flex;
         font-size: xx-large;
-        
         justify-content: space-around;
         align-items: center;
+        background-attachment:fixed;
     }
     .button{
         background-color: firebrick;
@@ -63,7 +60,7 @@
         padding: 10px 20px;
         font-size: 20px;
         background: firebrick;
-        border-radius: 8px;
+        border-radius: 0px 20px 0px 20px;
         transition: 0.4s;
     }
     .register a:hover{
@@ -90,66 +87,116 @@
         letter-spacing: 0.5px;
         font-size: 2em;
     }
-    .cn{
-    width: 290px;
-    height: 90px;
-    background: palegreen ;
-    border: none;
-    border-radius: 20px;
-    position: relative;
-    font-size: 40px;
-    top: 450px;
-    right: 300px;
+    .vatta{
+      background:transparent
+	}
 
-    a{
-    text-decoration: none; 
-    color: black;
+ button {
+            color : white;
+            cursor: pointer;
+            transition : 0.3s;
+            border: 1px solid white;
+            border-radius : 2px 35px 2px 35px; /* Bold border */
+            background-color: transparent;
+            backdrop-filter : blur(5px); /* Transparent background */
+            height: 100px;
+            width: 200px;
+            color: Gold; /* Text color */
+            font-size: 1.5em;
+            /box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);/ /* Optional shadow effect */
+         a{ text-decoration : None;
+            color : white;
+            }
+        }
+
+        button:hover {
+            
+             /* Text color on hover */
+           transition : 0.3s;
+           
+            font-size: 2em;
+          a{text-decoration : None;
+             color : #FF720D;
+               }
+        }
+
+table{
+    width : 100%;
 }
-    }
-    .dn{
-    width: 290px;
-    height: 90px;
-    background: palegreen ;
-    border: none;
-    border-radius: 20px;
-    position: relative;
-    font-size: 40px;
-    top: 140px;
-    right: -50px;
-    a{
-    text-decoration: none; 
-    color: black;
+.orb {
+  width: 200px;
+  height: 200px;
+  background: #999;
+  border-radius: 0px 40px 0px 40px;
+  display: inline-block;
+  margin: 0 25px;
+  float: left;
+  /opacity : .5;/
+  transition: all .5s ease-out;
+/*  background-size:cover;*/
+  filter : grayscale(100%);
 }
-    }
-    .bn{
-    width: 290px;
-    height: 90px;
-    background: palegreen ;
-    border: none;
-    border-radius: 20px;
-    position: relative;
-    font-size: 40px;
-    top: 140px;
-    right: -250px;
-    a{
-    text-decoration: none; 
-    color: black;
+
+.orb:hover {
+  transform: scale(1.5);
+ /* opacity : 1;*/
+  filter : grayscale(0%);
+  cursor: pointer;
 }
-    }
-    .an{
-    width: 290px;
-    height: 90px;
-    background: palegreen ;
-    border: none;
-    border-radius: 20px;
-    position: relative;
-    font-size: 40px;
-    top: 450px;
-    right: 80px;
-    a{
-    text-decoration: none; 
-    color: black;}
-    }
+
+.red {background:url('1.jpg') no-repeat center center;
+      background-size:cover;
+}
+.yellow {background:url('harsha.jpg') no-repeat center center;
+         background-size : cover;
+         }
+.blue {background:blue;}
+.orange {background:orange;}
+.purple {background:purple;}
+.green {background:green;}
+.white{background : white;}
+.marquee {
+  height: 350px;
+  width: auto;
+  backdrop-filter: blur(10px);
+  background-size : fill;
+  /box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);/
+  border: 0.5px solid transparent;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  top : 200px;
+  right : 0;
+  left : 0;
+  margin: auto;
+}
+
+.marquee--inner {
+  display: block;
+  width: 300%;
+  margin: 70px;
+  position: relative;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+span {
+  float: left;
+  width: 50%:
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+@media only screen 
+and (min-width : 480px) {
+    /* Styles */
+}
 
 </style>
 </head>
@@ -158,34 +205,48 @@
 <header>
     <nav>
         <div class="logo">
-            <img src="logo.png";
+            <img src="sample4.png";
             width="200px";
             height="150px";/>
         </div>
         <div class="menu">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact us</a>
-        </div>
+           <a href="#about">About</a>
+            <a href="#contactus">Contact us</a></div>
         <div class="register">
-            <a href="loginpage.html">Login/Register</a>
+            <a href="loginpage2.0.html">Login/Register</a>
         </div>
     </nav>
     <section class="h-txt">
-        <span>Explore</span>
+        <p>Explore</p>
         <h1>Connecting People Through ALpHA</h1>
         <h2>Bringing World Together</h2>
     </section>
 </header>
 <header>
-<nav>
-<button class="dn"><a href="#">Chats</a></button>
-<button class="cn"><a href="#">Shopping</a></button>
-<button class="bn"><a href="#">Remainder</a></button>
-<button class="an"><a href="#">Simulation</a></button>
+<table>
+<tr>
+<th><button><a href="#">Chats</a></button></th>
+<th><button><a href="#">Shopping</a></button></th>
+<th><button><a href="#">Remainder</a></button></th>
+<th><button><a href="#">Simulation</a></button></th>
 
-</nav>  
+</tr>
+
+<tr>
+</tr>
+<table>
+<div class="marquee">
+  <div class="marquee--inner">
+    <span>
+      <div class="orb green"></div><div class="orb red"></div><div class="orb yellow"></div><div class="orb blue"></div><div class="orb orange"></div><div class =" orb white"></div><div class="orb purple"></div><div class="orb green"></div><div class="orb red"></div>
+    </span>
+    <span>
+      <div class="orb green"></div><div class="orb yellow"></div><div class="orb blue"></div><div class="orb orange"></div><div class="orb white"></div><div class="orb purple"></div><div class="orb red"></div>
+    </span>
+  </div>
 </div>
 </header>
+<header></header>
 </body>
 </html>
